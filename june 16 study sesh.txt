@@ -1,0 +1,67 @@
+next gen firewalls
+	provide packet filtering, network and port translation, vpn layer 2 and 4
+	third generation of firewalls
+	combine traditional firewalls with other network devices filtering functions
+	deep packet unseption (DPI) and intrusion prevention system (IPS)
+	five benefits 
+multi functional		- intergrated antivirus
+application awareness		- layer 2 - 7 enable / disable allows to block favebook access but not messenger, block / allow some features
+steamlines infrastructure	- no extra devices are required 
+threat protection		- antivirus, maleware protection, constantly updating, limit applications
+network speed			- 650 mbps - 152 gbps
+
+
+
+
+
+
+
+
+2.3 Configure and verify Layer 2 discovery protocols (Cisco Discovery Protocol and LLDP)
+	CDP, used to view neighboring cisco devices
+		enable
+		configure terminal
+		cdp run	
+		end
+	can be disabled/enabled per port
+		enable
+		configure terminal
+		interface ethernet 1/1
+		no cdp enable
+		end
+		show cdp
+			-device information
+			-local interface
+			-hold time
+			-capability
+			-platform
+			-port id
+	link layer discovery protocol, vender neutral, IEEE 802.1AB, 
+		enable
+		configure terminal
+		lldp run
+		interface ethernet 1/1
+		lldp transmit
+		lldp recieve
+		end
+		
+
+2.4 Configure and verify (Layer 2/Layer 3) EtherChannel (LACP)
+			2,4,8 cables, configureation needs to be the exact same on both sides (port number excluded)
+				Port mode, Access VLAN, Trunk native VLAN, Allowed VLAN list, Speed , 802.3x flow control setting ,MTU ,Broadcast/Unicast/Multicast Storm Control setting, Priority-Flow-Control, Untagged CoS
+			etherchannle - cisco, LACP - industry standard 
+			-active        Enable LACP unconditionally
+			-auto          Enable PAgP only if a PAgP device is detected
+			-desirable  Enable PAgP unconditionally
+			-on              Enable Etherchannel only
+			-passive     Enable LACP only if a LACP device is detected
+		enable
+		configure terminal
+		interface port-channel 1
+		(no interface port-channel 1)
+		exit
+		interface ethernet 1/1
+		switchport mode trunk
+		channel-group 1
+		end
+

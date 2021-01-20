@@ -1,0 +1,53 @@
+-1.1 Explain the role and function of network components
+1.1.e Controllers (Cisco DNA Center and WLC)
+	dna - DNA Center provides a single dashboard for every fundamental management task to simplify running your network
+		design, policy, provision, assurance, plateform
+
+-1.2 Describe characteristics of network topology architectures
+1.2.f On-premises and cloud
+	on-premis - one time cost, hosting servers, network device, end points on site
+	cloud	  - monthly subscription, hosting servers, network devices, end points in the cloud+
+
+-1.9 Compare IPv6 address types
+1.9.a Global unicast
+	-eui-64, used mac, add FFFE to middle, flips 7th bit
+1.9.b Unique local
+	-FE80::/10, eui-64
+1.9.c Link local
+	-FF02, Derived by device, host the creates the packet can send it onto the link,but no routers forward the packet
+1.9.d Anycast
+	-shared by two or more devices the exist in different parts of the network, all routers will forward to the nearest of the two servers, 
+1.9.e Multicast
+	-implies some subnet of all devices currently on lan
+1.9.f Modified EUI 64
+	-auto ipv6 add, takes mac, adds FFFE to middle, flips 7th bit
+
+-1.11 Describe wireless principles
+1.11.a Nonoverlapping Wi-Fi channels
+	-1,6,11 don't overlap out of the 1-13 channels on 2.4Ghz
+		https://www.google.com/search?q=Wifi+channels&sa=X&rlz=1C1GCEA_enUS838US838&sxsrf=ALeKk03snJMRHiXqSq7LZedl1VldfjOkOA:1591383535986&tbm=isch&source=iu&ictx=1&fir=042S2njWg2277M%253A%252C1xsvhxVpA1DvpM%252C_&vet=1&usg=AI4_-kSAjMpiD5z6zwxRluq_-vDEWB8zFQ&ved=2ahUKEwj8nfTSrevpAhXul3IEHeyTCXMQ_h0wAnoECAoQCA&biw=1639&bih=1287#imgrc=042S2njWg2277M:
+1.11.b SSID
+	-boradcasted to join wireless network
+1.11.c RF
+	-radio frequencies, 2.4 and 5 reserved for personal use 
+1.11.d Encryption
+	WEP - poor security, hard to configure, 
+	WPA - poor security, easier to configure, 802.11i, used pre-shared key (PSK)
+	WPA2 - good security, easier the WPA to configure, 802.11i, advanced encryption standard (AES), 
+
+-1.13 Describe switching concepts
+1.13.a MAC learning and aging
+	-known as ARP (adress resolution protocol), broadcast, 5 minute hold time
+1.13.b Frame switching
+	- source and dest mac add
+1.13.c Frame flooding
+	- basically braodcast, switch forwards packet out all ports except one recieved on, when switch pretends to be a hub
+1.13.d MAC address table 
+	- also known as cam table, holds all mac address the device knows how to reach
+---------------------------------------------------------------------------------------------------------------------
+ Configure and verify VLANs (normal range) spanning multiple switches
+
+2.1.a Access ports (data and voice)
+2.1.b Default VLAN
+2.1.c Connectivity
+---------------------- would like to build lab with 1 router 2 swithes in two different networks to show what vlans can do----------------

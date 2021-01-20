@@ -1,0 +1,33 @@
+2.1 Configure and verify VLANs (normal range) spanning multiple switches
+	2.1.a Access ports (data and voice)
+		access can only send traffic from one vlan for data and one for voice
+			en
+			conf t
+			interface ethernet 1/1
+			switchport mode access
+			switchport access vlan 100
+			switchport voice vlan 150
+			exit
+	2.1.b Default VLAN
+		by default default vlan is 1
+		all accessports start in default vlan
+	2.1.c Connectivity
+
+2.2 Configure and verify interswitch connectivity
+	2.2.a Trunk ports
+		trunk ports can carry traffic from all vlans
+		traffic can be limited to only all specifed vlans
+			en
+			configure terminal
+			interface etherenet 0/1
+			switchport mode trunk
+			switchport access vlan 1,2,3,4
+			exit
+	2.2.b 802.1Q
+		vlan tagging developed by IEEE
+		inserts extra 4 byte 802.1q vlan field into the frame header, 12 bit vlan Id which specifies the VLAn the fram belong
+		802.1q tagged frames can carriny information from 4,9094 vlans
+		origianl frame:		| dest. mac | sourc mac | length/type | data| fcs |
+		802.1q frame:		| dest. mac | 802.1q tag |sourc mac| length/type | data| fcs |
+	2.2.c Native VLAN
+		device will not incert vlan id in frame of native vlan
